@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    {{ bootstrap.load_css() }}
+    {% from 'bootstrap5/form.html' import render_form %}
+    <title>Edit Rating</title>
+  </head>
+  <body>
+
+
+    <h1>Edit Rating for: </h1>
+    <h2>{{form.book_name.data}}</h2>
+    {{ form.hidden_tag() }}
+    <p>
+      {{ form.current_rating.label }}
+      {{ form.current_rating.data }}
+    </p>
+
+    {{ render_form(form) }}
+    {{ bootstrap.load_js() }}
+
+  </body>
+</html>
